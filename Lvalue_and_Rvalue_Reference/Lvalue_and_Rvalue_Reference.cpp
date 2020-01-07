@@ -98,6 +98,20 @@ int main()
 	const int c = 1; //c is a lvalue
 	c = 2; //error, c is not modifiable
 
+	/*****************************************************************************************/
+	//misconception 3: rvalue are not modifiable
+	i + 3 = 6; //error
+	sum(3, 4) = 7; //error
+
+	//it is not true for user defined type(class)
+	Dog dog;
+	dog.bark(); //bark() may change the state of the dog object.
+
+	/*****************************************************************************************/
+	//Summary:
+	//1. every c++ expression yield either an rvalue or a lvalue
+	//2. if the expression has an identifiable memory address, it is lvalue; otherwise, rvalue
+
 
 	return 0;
 }
